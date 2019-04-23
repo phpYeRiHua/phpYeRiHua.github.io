@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{msg}}
+    </div>
+</body>
+<script>
+    var vm=new Vue({
+        el:"#app",
+        data:{
+            msg:"小轩在不在，我是娇妹"
+        },
+        beforeCreate(){
+            console.log(this.msg)
+            console.log("显示undefined是因为Vue实例还没创建我就已经调用这个函数了")
+        },
+        created(){
+            console.log(this.msg)
+            console.log('Vue实例创建后才调用此函数，此时可以显示msg的数据信息')
+        },
+        beforeMount(){
+            console.log(document.getElementById("app").innerHTML)
+            console.log("显示{{msg}}是因为数据还没渲染就已经调用这个函数了")
+        },
+        mounted(){
+            console.log(document.getElementById("app").innerHTML)
+            console.log("显示msg数据是因为数据渲染后才调用这个函数")
+        }
+    })
+</script>
+</html>
