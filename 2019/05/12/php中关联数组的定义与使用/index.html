@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>phpYeRiHua.github.io</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="title: php中关联数组的定义与使用date: 2019-05-12 19:55:54tags: 关联数组和数组类似，由以名称作为键的字段和方法组成。 它包含标量数据，可用索引值来单独选择这些数据，和数组不同的是， 关联数组的索引值不是非负的整数而是任意的标量。这些标量称为Keys，可以在以后用于检索数组中的数值。  关联数组的元素没有特定的顺序，你可以把它们想象为一组卡片。每张卡片上半部分">
+<meta property="og:type" content="article">
+<meta property="og:title" content="phpYeRiHua.github.io">
+<meta property="og:url" content="http://yoursite.com/2019/05/12/php中关联数组的定义与使用/index.html">
+<meta property="og:site_name" content="phpYeRiHua.github.io">
+<meta property="og:description" content="title: php中关联数组的定义与使用date: 2019-05-12 19:55:54tags: 关联数组和数组类似，由以名称作为键的字段和方法组成。 它包含标量数据，可用索引值来单独选择这些数据，和数组不同的是， 关联数组的索引值不是非负的整数而是任意的标量。这些标量称为Keys，可以在以后用于检索数组中的数值。  关联数组的元素没有特定的顺序，你可以把它们想象为一组卡片。每张卡片上半部分">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-12T12:45:44.269Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="phpYeRiHua.github.io">
+<meta name="twitter:description" content="title: php中关联数组的定义与使用date: 2019-05-12 19:55:54tags: 关联数组和数组类似，由以名称作为键的字段和方法组成。 它包含标量数据，可用索引值来单独选择这些数据，和数组不同的是， 关联数组的索引值不是非负的整数而是任意的标量。这些标量称为Keys，可以在以后用于检索数组中的数值。  关联数组的元素没有特定的顺序，你可以把它们想象为一组卡片。每张卡片上半部分">
+  
+    <link rel="alternate" href="/atom.xml" title="phpYeRiHua.github.io" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">phpYeRiHua.github.io</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-php中关联数组的定义与使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/12/php中关联数组的定义与使用/" class="article-date">
+  <time datetime="2019-05-12T11:55:54.041Z" itemprop="datePublished">2019-05-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>title: php中关联数组的定义与使用<br>date: 2019-05-12 19:55:54<br>tags:</p>
+<p>关联数组和数组类似，由以名称作为键的字段和方法组成。</p>
+<p>它包含标量数据，可用索引值来单独选择这些数据，和数组不同的是， 关联数组的索引值不是非负的整数而是任意的标量。这些标量称为Keys，可以在以后用于检索数组中的数值。 </p>
+<p>关联数组的元素没有特定的顺序，你可以把它们想象为一组卡片。每张卡片上半部分是索引而下半部分是数值。  </p>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>方法一：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$arr1 = [</span><br><span class="line">    <span class="string">'name'</span> =&gt; <span class="string">'张三'</span>,</span><br><span class="line">    <span class="string">'age'</span> =&gt; <span class="number">20</span>,</span><br><span class="line">    <span class="string">'height'</span> = <span class="string">'180cm'</span></span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+<p>方法二：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$arr2 = <span class="keyword">array</span>(</span><br><span class="line">    <span class="string">'name'</span> =&gt; <span class="string">'张三'</span>,</span><br><span class="line">    <span class="string">'age'</span> =&gt; <span class="number">20</span>,</span><br><span class="line">    <span class="string">'height'</span> =&gt; <span class="string">'180cm'</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>访问数组中的元素：可以使用键名访问</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">echo</span> $arr1[<span class="string">'name'</span>];   <span class="comment">//输出张三</span></span><br></pre></td></tr></table></figure>
+<p>修改数组中的元素</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$arr1[<span class="string">'name'</span>] = <span class="string">'李四'</span>;</span><br><span class="line"><span class="keyword">echo</span> $arr1[<span class="string">'name'</span>];   <span class="comment">//输出李四</span></span><br></pre></td></tr></table></figure>
+<p>向数组中添加元素</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$arr1[<span class="string">'weight'</span>] = <span class="string">'70kg'</span>;</span><br></pre></td></tr></table></figure>
+<p>删除元素</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">unset</span>($arr1[<span class="string">'age'</span>])</span><br></pre></td></tr></table></figure>
+<p>打印数组</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var_dump($arr1);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/12/php中关联数组的定义与使用/" data-id="cjvkxad510002s0w8y3i95lao" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/05/12/php中变量的传值/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">php中变量的传值</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/12/php中关联数组的定义与使用/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/12/php中变量的传值/">php中变量的传值</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/11/php中常量与变量/">php中常量与变量</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/11/Apache配置/">Apache配置</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/12/nodejs基础/">nodejs基础</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 叶日华<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
