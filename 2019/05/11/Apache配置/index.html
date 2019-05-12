@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Apache配置 | phpYeRiHua.github.io</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="配置文件Apache 运行时依赖于配置文件，在这个文件中定义了端口号、网站根目录、权限、虚拟主机等信息 。配置文件的的位置： PHPStudy 安装目录\PHPTutorial\Apache\conf\http.conf 修改配置文件时要注意： 1、配置文件以 # 开头的行是被注释的行，不起作用。 2、每次修改了配置文件之后，需要重新启动Apache才会生效 3、常用配置说明：    配置项 说明">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Apache配置">
+<meta property="og:url" content="http://yoursite.com/2019/05/11/Apache配置/index.html">
+<meta property="og:site_name" content="phpYeRiHua.github.io">
+<meta property="og:description" content="配置文件Apache 运行时依赖于配置文件，在这个文件中定义了端口号、网站根目录、权限、虚拟主机等信息 。配置文件的的位置： PHPStudy 安装目录\PHPTutorial\Apache\conf\http.conf 修改配置文件时要注意： 1、配置文件以 # 开头的行是被注释的行，不起作用。 2、每次修改了配置文件之后，需要重新启动Apache才会生效 3、常用配置说明：    配置项 说明">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-11T13:00:27.128Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Apache配置">
+<meta name="twitter:description" content="配置文件Apache 运行时依赖于配置文件，在这个文件中定义了端口号、网站根目录、权限、虚拟主机等信息 。配置文件的的位置： PHPStudy 安装目录\PHPTutorial\Apache\conf\http.conf 修改配置文件时要注意： 1、配置文件以 # 开头的行是被注释的行，不起作用。 2、每次修改了配置文件之后，需要重新启动Apache才会生效 3、常用配置说明：    配置项 说明">
+  
+    <link rel="alternate" href="/atom.xml" title="phpYeRiHua.github.io" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">phpYeRiHua.github.io</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Apache配置" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/11/Apache配置/" class="article-date">
+  <time datetime="2019-05-11T12:05:06.000Z" itemprop="datePublished">2019-05-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Apache配置
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>Apache 运行时依赖于配置文件，在这个文件中定义了端口号、网站根目录、权限、虚拟主机等信息 。配置文件的的位置：</p>
+<p>PHPStudy 安装目录\PHPTutorial\Apache\conf\http.conf</p>
+<p>修改配置文件时要注意：</p>
+<p>1、配置文件以 # 开头的行是被注释的行，不起作用。</p>
+<p>2、每次修改了配置文件之后，需要重新启动Apache才会生效</p>
+<p>3、常用配置说明：</p>
+<table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Listen</td>
+<td>监听的端口号</td>
+</tr>
+<tr>
+<td>LoadModule</td>
+<td>加载其他功能模块，需要加载PHP模块才能运行PHP</td>
+</tr>
+<tr>
+<td>DocumentRoot</td>
+<td>配置网站根目录，只有这个目录下的网页别人才能看见</td>
+</tr>
+<tr>
+<td>DirectoryIndex</td>
+<td>当用户没用写请求的文件时默认访问的文件</td>
+</tr>
+<tr>
+<td>Include</td>
+<td>加载其他配置文件</td>
+</tr>
+</tbody>
+</table>
+<h2 id="配置端口号"><a href="#配置端口号" class="headerlink" title="配置端口号"></a>配置端口号</h2><p>Apache 默认监听80端口，如果希望监听其他端口可以修改listen这一项</p>
+<p>比如：我们希望 Apache 同时监听80和8080两个端口，那么我们就可以添加一行 listen</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">listen 80</span><br><span class="line">listen 8080</span><br></pre></td></tr></table></figure>
+<p>然后重新启动就可以使用80和8080两个端口访问了</p>
+<h2 id="配置网站根目录"><a href="#配置网站根目录" class="headerlink" title="配置网站根目录"></a>配置网站根目录</h2><p>当用户访问一个文件时，Apache 会到网站根目录中找到这个文件。比如：网站的根目录时 C:/www, 那么会有以下对应关系：</p>
+<table>
+<thead>
+<tr>
+<th>用户访问路径</th>
+<th>服务器上对应的文件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://localhost/user.php" target="_blank" rel="noopener">http://localhost/user.php</a></td>
+<td>C:/www/user.php</td>
+</tr>
+<tr>
+<td><a href="http://localhost/goods/cart/goods.php" target="_blank" rel="noopener">http://localhost/goods/cart/goods.php</a></td>
+<td>C:/www/goods/cart/goods.php</td>
+</tr>
+</tbody>
+</table>
+<p>在配置文件中我们可以通过 DocumentRoot 来修改网站的根目录</p>
+<h2 id="配置默认请求文件"><a href="#配置默认请求文件" class="headerlink" title="配置默认请求文件"></a>配置默认请求文件</h2><p>如果用户在访问网站时没用写明要访问的文件，Apache 会根据配置文件中 DirectoryIndex 配置项在网站根目录依次查找文件，如果找到就直接返回。比如，配置文件中这样配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DirectoryIndex index.html index.php index.htm 1.php</span><br></pre></td></tr></table></figure>
+<p>这时用户访问 <a href="http://localhost" target="_blank" rel="noopener">http://localhost</a> 时，Apache会在根目录中依次查找 index.html, index.php, index.htm, 1.php 找到那个就显示那个</p>
+<h2 id="配置虚拟主机"><a href="#配置虚拟主机" class="headerlink" title="配置虚拟主机"></a>配置虚拟主机</h2><p>好处:</p>
+<p>1、同一台电脑上可以同时发布多个项目，每个项目一个网站根目录互不影响</p>
+<p>2、每个项目可以使用一个独立的域名</p>
+<p>VirtualHost</p>
+<p>我们可以用 VirtualHost 标签来配置一个虚拟主机：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost 绑定IP:绑定端口号&gt;</span><br><span class="line">	DocumentRoot &quot;网站所在根目录&quot;</span><br><span class="line">	ServerName 使用的域名</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+<p>示例:配置两个虚拟主机，分别用 <a href="http://www.aaa.com" target="_blank" rel="noopener">www.aaa.com</a> 和 <a href="http://www.bbb.com" target="_blank" rel="noopener">www.bbb.com</a> 作为域名</p>
+<p>1、在D盘创建两个项目的目录：</p>
+<p>目录一：<a href="http://www.aaa.com" target="_blank" rel="noopener">www.aaa.com</a></p>
+<p>目录二：<a href="http://www.bbb.com" target="_blank" rel="noopener">www.bbb.com</a></p>
+<p>2、在 Apache 的配置文件中最后添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">	DocumentRoot &quot;D:\www.aaa.com&quot;</span><br><span class="line">	ServerName www.aaa.com</span><br><span class="line">&lt;/VirtualHost&gt;</span><br><span class="line"></span><br><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">	DocumentRoot &quot;D:\www.bbb.com&quot;</span><br><span class="line">	ServerName www.bbb.com</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+<p>说明：</p>
+<p>*: 绑定到本机所有的IP地址上</p>
+<p>80: 绑定到80端口上</p>
+<p>DocumentRoot: 项目目录</p>
+<p>ServerName: 使用的域名</p>
+<p>3、在本地hosts文件中注册两个域名，都绑定到本机</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1 www.aaa.com</span><br><span class="line">127.0.0.1 www.bbb.com</span><br></pre></td></tr></table></figure>
+<p>4、重启 Apache ，然后就可以使用这两个域名访问这两个网站了</p>
+<p>说明：注册在本机 hosts 中的域名只能在本地访问，一般未本地开发时使用</p>
+<h2 id="配置权限"><a href="#配置权限" class="headerlink" title="配置权限"></a>配置权限</h2><p>有时我们需要为我们的网站配置访问权限，比如：只能本机访问、只有同一个局域网可以访问、只有固定的ip地址才能访问等</p>
+<p>可以使用 Directory 标签配置权限</p>
+<p>示例一：允许所有人访问</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">	DocumentRoot &quot;D:\www.aaa.com&quot;</span><br><span class="line">	ServerName www.aaa.com</span><br><span class="line">	&lt;Directory &quot;D:\www.aaa.com&quot;&gt;</span><br><span class="line">    	Options +Indexes +FollowSymLinks =ExecCGI    # 添加的可选功能</span><br><span class="line">    	AllowOverride All     # 是否允许重写功能</span><br><span class="line">    	Order allow,deny      # 权限的执行顺序</span><br><span class="line">    	Allow from all        # 允许所有人访问</span><br><span class="line">    	Require all granted   # 允许所有人访问</span><br><span class="line">	&lt;/Directory&gt;</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+<p>示例二：禁止所有人访问</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">	DocumentRoot &quot;D:\www.bbb.com&quot;</span><br><span class="line">	ServerName www.bbb.com</span><br><span class="line">	&lt;Directory &quot;D:\www.bbb.com&quot;&gt;</span><br><span class="line">    	Options +Indexes +FollowSymLinks =ExecCGI    # 添加的可选功能</span><br><span class="line">    	AllowOverride All     # 是否允许重写功能</span><br><span class="line">    	Order allow,deny      # 权限的执行顺序</span><br><span class="line">    	Deny from all         # 禁止所有人访问</span><br><span class="line">    	Require all denied    # 禁止所有人访问</span><br><span class="line">	&lt;/Directory&gt;</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+<p>说明：</p>
+<p>Options +Indexes：</p>
+<p>​    前提：</p>
+<p>​    1、访问网站时没有指定文件名</p>
+<p>​    2、默认的文件不存在</p>
+<p>这时 +Indexes：列出目录下所有的文件</p>
+<p>-Indexes：拒绝访问</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/11/Apache配置/" data-id="cjvkwifzq0000sow84o94zp2e" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/05/11/php中常量与变量/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          php中常量与变量
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/12/nodejs基础/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">nodejs基础</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/12/php中变量的传值/">php中变量的传值</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/11/php中常量与变量/">php中常量与变量</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/11/Apache配置/">Apache配置</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/12/nodejs基础/">nodejs基础</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/12/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 叶日华<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

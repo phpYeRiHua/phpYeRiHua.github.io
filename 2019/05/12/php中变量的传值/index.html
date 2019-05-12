@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>php中变量的传值 | phpYeRiHua.github.io</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="我们可以把一个变量的值传给另一个变量，在传值时有两种情况：值传递和引用传递。 值传递：把一个变量的值在内存中复制一份给另一个变量（类似于克隆） 引用传递：把另一个变量在内存中的地址给另一个变量，两个变量实际上操作同一块内存（类似于起别名） 值传递：值传递直接使用  =  即可 示例代码：把a变量的值传给b 1234567$a = 100;$b = $a;$a=200;echo $a;   //输出">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php中变量的传值">
+<meta property="og:url" content="http://yoursite.com/2019/05/12/php中变量的传值/index.html">
+<meta property="og:site_name" content="phpYeRiHua.github.io">
+<meta property="og:description" content="我们可以把一个变量的值传给另一个变量，在传值时有两种情况：值传递和引用传递。 值传递：把一个变量的值在内存中复制一份给另一个变量（类似于克隆） 引用传递：把另一个变量在内存中的地址给另一个变量，两个变量实际上操作同一块内存（类似于起别名） 值传递：值传递直接使用  =  即可 示例代码：把a变量的值传给b 1234567$a = 100;$b = $a;$a=200;echo $a;   //输出">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-12T11:44:35.128Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="php中变量的传值">
+<meta name="twitter:description" content="我们可以把一个变量的值传给另一个变量，在传值时有两种情况：值传递和引用传递。 值传递：把一个变量的值在内存中复制一份给另一个变量（类似于克隆） 引用传递：把另一个变量在内存中的地址给另一个变量，两个变量实际上操作同一块内存（类似于起别名） 值传递：值传递直接使用  =  即可 示例代码：把a变量的值传给b 1234567$a = 100;$b = $a;$a=200;echo $a;   //输出">
+  
+    <link rel="alternate" href="/atom.xml" title="phpYeRiHua.github.io" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">phpYeRiHua.github.io</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-php中变量的传值" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/12/php中变量的传值/" class="article-date">
+  <time datetime="2019-05-12T11:34:21.000Z" itemprop="datePublished">2019-05-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      php中变量的传值
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我们可以把一个变量的值传给另一个变量，在传值时有两种情况：值传递和引用传递。</p>
+<p>值传递：把一个变量的值在内存中复制一份给另一个变量（类似于克隆）</p>
+<p>引用传递：把另一个变量在内存中的地址给另一个变量，两个变量实际上操作同一块内存（类似于起别名）</p>
+<h3 id="值传递："><a href="#值传递：" class="headerlink" title="值传递："></a>值传递：</h3><p>值传递直接使用  =  即可</p>
+<p>示例代码：把a变量的值传给b</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$a = 100;</span><br><span class="line">$b = $a;</span><br><span class="line"></span><br><span class="line">$a=200;</span><br><span class="line"></span><br><span class="line">echo $a;   //输出 200</span><br><span class="line">echo $b;   //输出 100</span><br></pre></td></tr></table></figure>
+<h3 id="引用传递"><a href="#引用传递" class="headerlink" title="引用传递"></a>引用传递</h3><p>引用传递时在变量名前使用 &amp; 符号，获取变量在内存中的地址</p>
+<p>示例代码：把a的引用传给b</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$a = 100;</span><br><span class="line">$b = &amp;$a;</span><br><span class="line"></span><br><span class="line">$a = 200;</span><br><span class="line"></span><br><span class="line">echo $a;    //输出200</span><br><span class="line">echo $b;    //输出200</span><br></pre></td></tr></table></figure>
+<p>说明：</p>
+<p>1、如果不加 &amp; 符号默认都是值传递</p>
+<p>2、对象类型的数据除外，对象类型的数据都是引用传递</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/12/php中变量的传值/" data-id="cjvkwig0d0003sow8kwq906io" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/05/11/php中常量与变量/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">php中常量与变量</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/12/php中变量的传值/">php中变量的传值</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/11/php中常量与变量/">php中常量与变量</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/11/Apache配置/">Apache配置</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/12/nodejs基础/">nodejs基础</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/12/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 叶日华<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

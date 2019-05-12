@@ -62,6 +62,240 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-php中变量的传值" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/12/php中变量的传值/" class="article-date">
+  <time datetime="2019-05-12T11:34:21.000Z" itemprop="datePublished">2019-05-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/12/php中变量的传值/">php中变量的传值</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我们可以把一个变量的值传给另一个变量，在传值时有两种情况：值传递和引用传递。</p>
+<p>值传递：把一个变量的值在内存中复制一份给另一个变量（类似于克隆）</p>
+<p>引用传递：把另一个变量在内存中的地址给另一个变量，两个变量实际上操作同一块内存（类似于起别名）</p>
+<h3 id="值传递："><a href="#值传递：" class="headerlink" title="值传递："></a>值传递：</h3><p>值传递直接使用  =  即可</p>
+<p>示例代码：把a变量的值传给b</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$a = 100;</span><br><span class="line">$b = $a;</span><br><span class="line"></span><br><span class="line">$a=200;</span><br><span class="line"></span><br><span class="line">echo $a;   //输出 200</span><br><span class="line">echo $b;   //输出 100</span><br></pre></td></tr></table></figure>
+<h3 id="引用传递"><a href="#引用传递" class="headerlink" title="引用传递"></a>引用传递</h3><p>引用传递时在变量名前使用 &amp; 符号，获取变量在内存中的地址</p>
+<p>示例代码：把a的引用传给b</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$a = 100;</span><br><span class="line">$b = &amp;$a;</span><br><span class="line"></span><br><span class="line">$a = 200;</span><br><span class="line"></span><br><span class="line">echo $a;    //输出200</span><br><span class="line">echo $b;    //输出200</span><br></pre></td></tr></table></figure>
+<p>说明：</p>
+<p>1、如果不加 &amp; 符号默认都是值传递</p>
+<p>2、对象类型的数据除外，对象类型的数据都是引用传递</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/12/php中变量的传值/" data-id="cjvkwig0d0003sow8kwq906io" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-php中常量与变量" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/11/php中常量与变量/" class="article-date">
+  <time datetime="2019-05-11T13:13:59.000Z" itemprop="datePublished">2019-05-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/11/php中常量与变量/">php中常量与变量</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>php中的数据分为两大类：常量和变量</p>
+<p>常量：值不能被改变。比如：圆周率、光速、一周的天数、一天的小时数等等。</p>
+<p>变量：值可以被改变。比如：年龄、价格、身高、车速、风速等等。</p>
+<h3 id="常量的定义和使用"><a href="#常量的定义和使用" class="headerlink" title="常量的定义和使用"></a>常量的定义和使用</h3><p>可以用 const 或者 define 来定义一个变量</p>
+<p>const 语法：const  名称=值;</p>
+<p>define 语法：define(‘名称’,值);</p>
+<p>命名规范：常量名都是用大写：比如：PI、Light_SPEED。</p>
+<p>示例：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="string">'PI'</span>,<span class="number">3.14</span>);</span><br><span class="line">define(<span class="string">'LIGHT_SPEED'</span>,<span class="number">300000</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> HOURS_OF_DAY =<span class="number">24</span>;</span><br><span class="line"><span class="keyword">const</span> DAYS_OF_WEEK =<span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> PI;         <span class="comment">//输出3.14</span></span><br><span class="line"><span class="keyword">echo</span> DAYS_OF_WEEK;       <span class="comment">//输出7</span></span><br></pre></td></tr></table></figure>
+<p>注意：常量不能被修改值，一旦修改就会报错</p>
+<h3 id="变量的定义和使用"><a href="#变量的定义和使用" class="headerlink" title="变量的定义和使用"></a>变量的定义和使用</h3><p>在PHP中可以用 $ 符号来定义变量</p>
+<p>语法：$名称=值;</p>
+<p>命名规则：</p>
+<p>1、名称中只能包含数字、字母、_和汉字</p>
+<p>2、不能以数字开头</p>
+<p>示例：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    $name = <span class="string">'tom'</span>;</span><br><span class="line">	$age = <span class="number">20</span>;</span><br><span class="line">	$height = <span class="number">180</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//修改变量的值</span></span><br><span class="line">	$name = <span class="string">'jack'</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">echo</span> $name;            <span class="comment">//输出jack</span></span><br><span class="line">	<span class="keyword">echo</span> $age;             <span class="comment">//输出20</span></span><br><span class="line">	<span class="keyword">echo</span> $height;          <span class="comment">//输出180</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/11/php中常量与变量/" data-id="cjvkwig0b0002sow80b6vqguf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Apache配置" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/11/Apache配置/" class="article-date">
+  <time datetime="2019-05-11T12:05:06.000Z" itemprop="datePublished">2019-05-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/11/Apache配置/">Apache配置</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>Apache 运行时依赖于配置文件，在这个文件中定义了端口号、网站根目录、权限、虚拟主机等信息 。配置文件的的位置：</p>
+<p>PHPStudy 安装目录\PHPTutorial\Apache\conf\http.conf</p>
+<p>修改配置文件时要注意：</p>
+<p>1、配置文件以 # 开头的行是被注释的行，不起作用。</p>
+<p>2、每次修改了配置文件之后，需要重新启动Apache才会生效</p>
+<p>3、常用配置说明：</p>
+<table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Listen</td>
+<td>监听的端口号</td>
+</tr>
+<tr>
+<td>LoadModule</td>
+<td>加载其他功能模块，需要加载PHP模块才能运行PHP</td>
+</tr>
+<tr>
+<td>DocumentRoot</td>
+<td>配置网站根目录，只有这个目录下的网页别人才能看见</td>
+</tr>
+<tr>
+<td>DirectoryIndex</td>
+<td>当用户没用写请求的文件时默认访问的文件</td>
+</tr>
+<tr>
+<td>Include</td>
+<td>加载其他配置文件</td>
+</tr>
+</tbody>
+</table>
+<h2 id="配置端口号"><a href="#配置端口号" class="headerlink" title="配置端口号"></a>配置端口号</h2><p>Apache 默认监听80端口，如果希望监听其他端口可以修改listen这一项</p>
+<p>比如：我们希望 Apache 同时监听80和8080两个端口，那么我们就可以添加一行 listen</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">listen 80</span><br><span class="line">listen 8080</span><br></pre></td></tr></table></figure>
+<p>然后重新启动就可以使用80和8080两个端口访问了</p>
+<h2 id="配置网站根目录"><a href="#配置网站根目录" class="headerlink" title="配置网站根目录"></a>配置网站根目录</h2><p>当用户访问一个文件时，Apache 会到网站根目录中找到这个文件。比如：网站的根目录时 C:/www, 那么会有以下对应关系：</p>
+<table>
+<thead>
+<tr>
+<th>用户访问路径</th>
+<th>服务器上对应的文件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://localhost/user.php" target="_blank" rel="noopener">http://localhost/user.php</a></td>
+<td>C:/www/user.php</td>
+</tr>
+<tr>
+<td><a href="http://localhost/goods/cart/goods.php" target="_blank" rel="noopener">http://localhost/goods/cart/goods.php</a></td>
+<td>C:/www/goods/cart/goods.php</td>
+</tr>
+</tbody>
+</table>
+<p>在配置文件中我们可以通过 DocumentRoot 来修改网站的根目录</p>
+<h2 id="配置默认请求文件"><a href="#配置默认请求文件" class="headerlink" title="配置默认请求文件"></a>配置默认请求文件</h2><p>如果用户在访问网站时没用写明要访问的文件，Apache 会根据配置文件中 DirectoryIndex 配置项在网站根目录依次查找文件，如果找到就直接返回。比如，配置文件中这样配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DirectoryIndex index.html index.php index.htm 1.php</span><br></pre></td></tr></table></figure>
+<p>这时用户访问 <a href="http://localhost" target="_blank" rel="noopener">http://localhost</a> 时，Apache会在根目录中依次查找 index.html, index.php, index.htm, 1.php 找到那个就显示那个</p>
+<h2 id="配置虚拟主机"><a href="#配置虚拟主机" class="headerlink" title="配置虚拟主机"></a>配置虚拟主机</h2><p>好处:</p>
+<p>1、同一台电脑上可以同时发布多个项目，每个项目一个网站根目录互不影响</p>
+<p>2、每个项目可以使用一个独立的域名</p>
+<p>VirtualHost</p>
+<p>我们可以用 VirtualHost 标签来配置一个虚拟主机：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost 绑定IP:绑定端口号&gt;</span><br><span class="line">	DocumentRoot &quot;网站所在根目录&quot;</span><br><span class="line">	ServerName 使用的域名</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+<p>示例:配置两个虚拟主机，分别用 <a href="http://www.aaa.com" target="_blank" rel="noopener">www.aaa.com</a> 和 <a href="http://www.bbb.com" target="_blank" rel="noopener">www.bbb.com</a> 作为域名</p>
+<p>1、在D盘创建两个项目的目录：</p>
+<p>目录一：<a href="http://www.aaa.com" target="_blank" rel="noopener">www.aaa.com</a></p>
+<p>目录二：<a href="http://www.bbb.com" target="_blank" rel="noopener">www.bbb.com</a></p>
+<p>2、在 Apache 的配置文件中最后添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">	DocumentRoot &quot;D:\www.aaa.com&quot;</span><br><span class="line">	ServerName www.aaa.com</span><br><span class="line">&lt;/VirtualHost&gt;</span><br><span class="line"></span><br><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">	DocumentRoot &quot;D:\www.bbb.com&quot;</span><br><span class="line">	ServerName www.bbb.com</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+<p>说明：</p>
+<p>*: 绑定到本机所有的IP地址上</p>
+<p>80: 绑定到80端口上</p>
+<p>DocumentRoot: 项目目录</p>
+<p>ServerName: 使用的域名</p>
+<p>3、在本地hosts文件中注册两个域名，都绑定到本机</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1 www.aaa.com</span><br><span class="line">127.0.0.1 www.bbb.com</span><br></pre></td></tr></table></figure>
+<p>4、重启 Apache ，然后就可以使用这两个域名访问这两个网站了</p>
+<p>说明：注册在本机 hosts 中的域名只能在本地访问，一般未本地开发时使用</p>
+<h2 id="配置权限"><a href="#配置权限" class="headerlink" title="配置权限"></a>配置权限</h2><p>有时我们需要为我们的网站配置访问权限，比如：只能本机访问、只有同一个局域网可以访问、只有固定的ip地址才能访问等</p>
+<p>可以使用 Directory 标签配置权限</p>
+<p>示例一：允许所有人访问</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">	DocumentRoot &quot;D:\www.aaa.com&quot;</span><br><span class="line">	ServerName www.aaa.com</span><br><span class="line">	&lt;Directory &quot;D:\www.aaa.com&quot;&gt;</span><br><span class="line">    	Options +Indexes +FollowSymLinks =ExecCGI    # 添加的可选功能</span><br><span class="line">    	AllowOverride All     # 是否允许重写功能</span><br><span class="line">    	Order allow,deny      # 权限的执行顺序</span><br><span class="line">    	Allow from all        # 允许所有人访问</span><br><span class="line">    	Require all granted   # 允许所有人访问</span><br><span class="line">	&lt;/Directory&gt;</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+<p>示例二：禁止所有人访问</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">	DocumentRoot &quot;D:\www.bbb.com&quot;</span><br><span class="line">	ServerName www.bbb.com</span><br><span class="line">	&lt;Directory &quot;D:\www.bbb.com&quot;&gt;</span><br><span class="line">    	Options +Indexes +FollowSymLinks =ExecCGI    # 添加的可选功能</span><br><span class="line">    	AllowOverride All     # 是否允许重写功能</span><br><span class="line">    	Order allow,deny      # 权限的执行顺序</span><br><span class="line">    	Deny from all         # 禁止所有人访问</span><br><span class="line">    	Require all denied    # 禁止所有人访问</span><br><span class="line">	&lt;/Directory&gt;</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+<p>说明：</p>
+<p>Options +Indexes：</p>
+<p>​    前提：</p>
+<p>​    1、访问网站时没有指定文件名</p>
+<p>​    2、默认的文件不存在</p>
+<p>这时 +Indexes：列出目录下所有的文件</p>
+<p>-Indexes：拒绝访问</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/11/Apache配置/" data-id="cjvkwifzq0000sow84o94zp2e" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-nodejs基础" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/04/12/nodejs基础/" class="article-date">
@@ -272,7 +506,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/12/nodejs基础/" data-id="cjv25819p0001yww8zbr3h4uk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/12/nodejs基础/" data-id="cjvkwig0f0004sow8483ls57b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -317,7 +551,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/12/hello-world/" data-id="cjv25819k0000yww8inj26uxf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/12/hello-world/" data-id="cjvkwig080001sow85gh2c4fz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -345,7 +579,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
     </div>
   </div>
 
@@ -356,6 +590,18 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/05/12/php中变量的传值/">php中变量的传值</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/11/php中常量与变量/">php中常量与变量</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/11/Apache配置/">Apache配置</a>
+          </li>
         
           <li>
             <a href="/2019/04/12/nodejs基础/">nodejs基础</a>
